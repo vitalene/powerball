@@ -29,7 +29,13 @@ func play(Guess: [Int]) {
     }
     switch wonPowerball {
     case true:
+        if winGuess.count > 0 {
         lotteryEarnings = Int(jackpot/10) * winGuess.count + (Int(jackpot/10) * 2)
+        } else if winGuess.count == 0 {
+            lotteryEarnings = Int(jackpot/10)
+        } else {
+            print("This shouldn't happen")
+        }
     default:
         lotteryEarnings = Int(jackpot/10) * winGuess.count
     }
